@@ -17,10 +17,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             Act1_PDMTheme {
                 val whatsappName = getString(R.string.whatsap_name)
-                val nombres = resources.getStringArray(R.array.nombres).toList()
+                val contactos = resources.getStringArray(R.array.nombres).toList()
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                        WhatssApp(nombres,whatsappName,Modifier.padding(innerPadding))
+                        WhatssApp(contactos,whatsappName,Modifier.padding(innerPadding))
                 }
             }
         }

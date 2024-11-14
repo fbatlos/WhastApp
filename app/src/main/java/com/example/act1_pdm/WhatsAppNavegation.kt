@@ -20,7 +20,6 @@ fun WhatsAppFooterCustom(
     onItemSelected: (String) -> Unit = {}
 ) {
     var itemSeleccionado by remember { mutableStateOf("chats") }
-
     Row(
         modifier = modifier
             .fillMaxWidth()

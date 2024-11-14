@@ -11,12 +11,12 @@
         <item name="nombre2">Luis</item>
         <item name="nombre3">Ignacio</item>
         <item name="nombre4">Fran</item>
-        <item>Jose</item>
-        <item>Jose</item>
-        <item>Jose</item>
-        <item>Jose</item>
-        <item>Jose</item>
-        <item>Jose</item>
-        <item>Jose</item>
+        <item>Jose1</item>
+        <item>Jose2</item>
+        <item>Jose3</item>
+        <item>Jose4</item>
+        <item>Jose5</item>
+        <item>Jose6</item>
+        <item>Jose7</item>
     </string-array>
 </resources>
