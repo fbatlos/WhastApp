@@ -1,8 +1,22 @@
 <resources>
     <string name="app_name">Act1_PDM</string>
     <string name="whatsap_name">WhatsApp</string>
-    <string name="nombre1">Pepe</string>
-    <string name="nombre2">Luis</string>
-    <string name="nombre3">Ignacio</string>
-    <string name="nombre4">Fran</string>
+
+    <string-array name="nombres">
+        <item>Nombre 1</item>
+        <item>Nombre 2</item>
+        <item>Nombre 3</item>
+        <item>Nombre 4</item>
+        <item name="nombre1">Pepe</item>
+        <item name="nombre2">Luis</item>
+        <item name="nombre3">Ignacio</item>
+        <item name="nombre4">Fran</item>
+        <item>Jose</item>
+        <item>Jose</item>
+        <item>Jose</item>
+        <item>Jose</item>
+        <item>Jose</item>
+        <item>Jose</item>
+        <item>Jose</item>
+    </string-array>
 </resources>

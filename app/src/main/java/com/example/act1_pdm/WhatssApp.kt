@@ -1,14 +1,17 @@
 package com.example.act1_pdm
 
+import WhatsAppFooterCustom
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
@@ -39,7 +42,8 @@ import com.example.act1_pdm.ui.theme.upGreen
 fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
 
     Column (
-        modifier = modifier.fillMaxSize()
+        modifier = modifier
+            .fillMaxSize()
             .background(color = upGreen)
         ,
         verticalArrangement = Arrangement.Center,
@@ -47,14 +51,14 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
 
     ){
         Row(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
                 .background(green)
                 .padding(top = 20.dp, bottom = 10.dp),
             horizontalArrangement = Arrangement.SpaceAround
         ){
-            Box (
-                contentAlignment = Alignment.Center,
-            ){
+            Box {
                 Text(text = nombreApp , fontSize = 8.em , color = Color.White)
             }
 
@@ -83,9 +87,16 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
                 )
             }
         }
-        StringList(strings = nombres)
-
-        Row {  }
+        Box(
+            modifier = Modifier.fillMaxSize().weight(10f)
+        ) {
+            StringList(strings = nombres)
+        }
+        Box (
+            modifier = Modifier.fillMaxWidth().weight(1f)
+        ){
+            WhatsAppFooterCustom()
+        }
     }
 
 }
@@ -93,14 +104,17 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
 @Composable
 fun StringList(strings: List<String>) {
     LazyColumn (
-        modifier = Modifier.fillMaxSize().padding(30.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp)
+        modifier = Modifier
+            .fillMaxSize()
+
     ){
         items(strings) { string ->
             Row{
                 Box(
                     contentAlignment = Alignment.CenterStart,
-                    modifier = Modifier.fillMaxWidth().border(1.dp, upGreen, CircleShape)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .border(1.dp, upGreen, CircleShape)
                 ){
                     Icon(
                         imageVector = Icons.Default.AccountCircle,

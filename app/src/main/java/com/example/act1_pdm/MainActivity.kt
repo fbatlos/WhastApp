@@ -17,12 +17,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             Act1_PDMTheme {
                 val whatsappName = getString(R.string.whatsap_name)
-                val nombres = listOf(
-                    getString(R.string.nombre1),
-                    getString(R.string.nombre2),
-                    getString(R.string.nombre3),
-                    getString(R.string.nombre4)
-                )
+                val nombres = resources.getStringArray(R.array.nombres).toList()
+
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                         WhatssApp(nombres,whatsappName,Modifier.padding(innerPadding))
                 }
