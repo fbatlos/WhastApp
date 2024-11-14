@@ -11,8 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.act1_pdm.R
-import com.example.act1_pdm.ui.theme.green
-import com.example.act1_pdm.ui.theme.upGreen
+import com.example.act1_pdm.ui.theme.negroWhats
 
 @Composable
 fun WhatsAppFooterCustom(
@@ -23,7 +22,7 @@ fun WhatsAppFooterCustom(
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .background(green)
+            .background(negroWhats)
             .padding(vertical = 8.dp),
         horizontalArrangement = Arrangement.SpaceAround,
         verticalAlignment = Alignment.CenterVertically

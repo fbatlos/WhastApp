@@ -41,7 +41,6 @@ fun chats(strings: List<String>, onChatClick: (String) -> Unit,modifier: Modifie
                     contentAlignment = Alignment.CenterStart,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .border(1.dp, Color.Black, CircleShape)
                         .clickable {
                             onChatClick(string)
                         }//Tengo que meterme en un chat.
@@ -49,7 +48,8 @@ fun chats(strings: List<String>, onChatClick: (String) -> Unit,modifier: Modifie
                     Icon(
                         imageVector = Icons.Default.AccountCircle,
                         contentDescription = "Points Icon",
-                        modifier = Modifier.size(60.dp)
+                        modifier = Modifier.size(60.dp),
+                        tint = Color.White
                     )
 
                     Text(text = string, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center , fontSize = 4.em , color = Color.White)

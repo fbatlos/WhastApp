@@ -29,8 +29,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 import com.example.act1_pdm.chats.chats
 import com.example.act1_pdm.chats.intoChat
-import com.example.act1_pdm.ui.theme.green
-import com.example.act1_pdm.ui.theme.upGreen
+import com.example.act1_pdm.novedades.novedades
+import com.example.act1_pdm.ui.theme.negroWhats
+
 
 @Composable
 fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
@@ -41,7 +42,7 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
         Column (
             modifier = modifier
                 .fillMaxSize()
-                .background(color = upGreen)
+                .background(color = negroWhats)
             ,
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -51,12 +52,12 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
-                    .background(green)
+                    .background(negroWhats)
                     .padding(top = 20.dp, bottom = 10.dp),
                 horizontalArrangement = Arrangement.SpaceAround
             ){
                 Box {
-                    Text(text = nombreApp , fontSize = 8.em , color = Color.White)
+                    Text(text = nombreApp , fontSize = 6.em , color = Color.White)
                 }
 
                 Row (
@@ -111,7 +112,7 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
                 WhatsAppFooterCustom(onItemSelected = {item ->
                     itemSeleccionado = item
                 })
-                Log.e("Hola",itemSeleccionado)
+                Log.e("Soy la opcion seleccionada",itemSeleccionado)
             }
         }
     }else{
