@@ -42,7 +42,7 @@ fun chats(strings: List<String>, onChatClick: (String) -> Unit,modifier: Modifie
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable {
-                            onChatClick(string)
+                            onChatClick(string.toString())
                         }//Tengo que meterme en un chat.
                 ){
                     Icon(

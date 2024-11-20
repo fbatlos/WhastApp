@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
+import com.example.act1_pdm.Navegation.AppNavegation
 import com.example.act1_pdm.ui.theme.Act1_PDMTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
                 val contactos = resources.getStringArray(R.array.nombres).toList()
 
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                        WhatssApp(contactos,whatsappName,Modifier.padding(innerPadding))
+                    AppNavegation(modifier = Modifier.padding(innerPadding),contactos, whatsappName)
                 }
             }
         }

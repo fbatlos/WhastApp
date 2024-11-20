@@ -27,6 +27,8 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
+import androidx.navigation.NavController
+import com.example.act1_pdm.Navegation.AppScreen
 import com.example.act1_pdm.chats.chats
 import com.example.act1_pdm.chats.intoChat
 import com.example.act1_pdm.novedades.novedades
@@ -34,7 +36,7 @@ import com.example.act1_pdm.ui.theme.negroWhats
 
 
 @Composable
-fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
+fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier, navController: NavController){
     var itemSeleccionado by remember { mutableStateOf("chats") }
     var selectedChat by remember { mutableStateOf<String?>(null) }
 
@@ -92,7 +94,7 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier){
                     when (itemSeleccionado) {
                         "chats" -> {
                             chats(strings = nombres, modifier = modifier,
-                                onChatClick = { selectedChat = it })
+                                onChatClick = { navController.navigate(route = AppScreen.intoChat.router + "/$it") })
                         }
 
                         "novedades" -> {

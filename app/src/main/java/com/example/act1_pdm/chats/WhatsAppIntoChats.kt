@@ -45,7 +45,7 @@ import com.example.act1_pdm.ui.theme.negroWhats
 
 
 @Composable
-fun intoChat(persona: String, onBack: () -> Unit, modifier: Modifier) {
+fun intoChat(persona: String?, onBack: () -> Unit, modifier: Modifier) {
     var textoantes by remember { mutableStateOf("") }
     val mensajes = remember { mutableStateListOf<String>() }
     Image(
@@ -89,7 +89,7 @@ fun intoChat(persona: String, onBack: () -> Unit, modifier: Modifier) {
                     tint = Color.White
                 )
 
-                Text(text = persona, fontSize = 6.em, color = Color.White )
+                Text(text = persona?:"", fontSize = 6.em, color = Color.White )
             }
 
             Row(
