@@ -30,17 +30,18 @@ import androidx.compose.ui.unit.em
 import androidx.navigation.NavController
 import com.example.act1_pdm.Navegation.AppScreen
 import com.example.act1_pdm.chats.chats
-import com.example.act1_pdm.chats.intoChat
+import com.example.act1_pdm.chats.Contacto
 import com.example.act1_pdm.novedades.novedades
 import com.example.act1_pdm.ui.theme.negroWhats
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 
 
 @Composable
-fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier, navController: NavController){
+fun WhatssApp(nombres:List<Contacto>, nombreApp : String, modifier: Modifier, navController: NavController){
     var itemSeleccionado by remember { mutableStateOf("chats") }
     var selectedChat by remember { mutableStateOf<String?>(null) }
 
-    if (selectedChat == null) {
         Column (
             modifier = modifier
                 .fillMaxSize()
@@ -94,7 +95,7 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier, nav
                     when (itemSeleccionado) {
                         "chats" -> {
                             chats(strings = nombres, modifier = modifier,
-                                onChatClick = { navController.navigate(route = AppScreen.intoChat.router + "/$it") })
+                                onChatClick = { navController.navigate(route = AppScreen.intoChat.router + "/${Json.encodeToString(it)}") })
                         }
 
                         "novedades" -> {
@@ -117,10 +118,6 @@ fun WhatssApp(nombres:List<String> , nombreApp : String ,modifier: Modifier, nav
                 Log.e("Soy la opcion seleccionada",itemSeleccionado)
             }
         }
-    }else{
-        intoChat(persona = selectedChat!!, onBack = {selectedChat = null}, modifier = modifier)
-    }
-
 }
 
 

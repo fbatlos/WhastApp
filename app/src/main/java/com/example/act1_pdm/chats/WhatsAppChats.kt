@@ -1,6 +1,7 @@
 package com.example.act1_pdm.chats
 
-import androidx.compose.foundation.border
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 
@@ -20,14 +21,16 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.em
 
 
 @Composable
-fun chats(strings: List<String>, onChatClick: (String) -> Unit,modifier: Modifier) {
+fun chats(strings: List<Contacto>, onChatClick: (Contacto) -> Unit, modifier: Modifier) {
     LazyColumn (
         modifier = Modifier
             .fillMaxSize()
@@ -42,17 +45,21 @@ fun chats(strings: List<String>, onChatClick: (String) -> Unit,modifier: Modifie
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable {
-                            onChatClick(string.toString())
+                            onChatClick(string)
                         }//Tengo que meterme en un chat.
                 ){
-                    Icon(
-                        imageVector = Icons.Default.AccountCircle,
-                        contentDescription = "Points Icon",
-                        modifier = Modifier.size(60.dp),
-                        tint = Color.White
+                    Image(
+                        painter = painterResource(string.imagenId),
+                        contentDescription = "Imagen de usuario",
+                        modifier = Modifier
+                            .size(54.dp)
+                            .clip(shape= CircleShape)
+                            .background(Color.White)
+
                     )
 
-                    Text(text = string, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center , fontSize = 4.em , color = Color.White)
+
+                    Text(text = string.nombre, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center , fontSize = 4.em , color = Color.White)
                 }
             }
         }

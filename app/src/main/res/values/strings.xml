@@ -19,4 +19,29 @@
         <item>Jose6</item>
         <item>Jose7</item>
     </string-array>
+
+    <string-array name="mensaje">
+        <item> Ven a cenar !!</item>
+        <item>Señoresss</item>
+        <item>alooo presidente</item>
+        <item>Mondongo</item>
+        <item name="nombre1">Pepe</item>
+        <item name="nombre2">Luis</item>
+        <item name="nombre3">Ignacio</item>
+        <item name="nombre4">Fran</item>
+        <item>Jose1</item>
+        <item>Jose2</item>
+        <item>Jose3</item>
+        <item>Jose4</item>
+        <item>Jose5</item>
+        <item>Jose6</item>
+        <item>Jose7</item>
+    </string-array>
+
+    <array name="imagenes">
+        <item>@drawable/imagen1</item>
+        <item>@drawable/imagen2</item>
+        <item>@drawable/imagen3</item>
+        <item>@drawable/imagen4</item>
+    </array>
 </resources>
